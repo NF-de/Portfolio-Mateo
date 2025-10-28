@@ -1,9 +1,14 @@
 // --- Scene, camera et renderer ---
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(
+    75,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    1000
+);
 camera.position.z = 5;
 
-const renderer = new THREE.WebGLRenderer({antialias:true});
+const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
@@ -21,30 +26,36 @@ function getPlaneSizeAtZ(z) {
 
 let size = getPlaneSizeAtZ(0);
 const bgGeometry = new THREE.PlaneGeometry(size.width, size.height);
-const bgMaterial = new THREE.MeshBasicMaterial({map: backgroundTexture});
+const bgMaterial = new THREE.MeshBasicMaterial({ map: backgroundTexture });
 const bgPlane = new THREE.Mesh(bgGeometry, bgMaterial);
 scene.add(bgPlane);
 
-// --- Plan central fixe avec texture animée ---
-const centralTexture = textureLoader.load('Images/sable_noir.jpg'); 
-centralTexture.wrapS = THREE.RepeatWrapping;
-centralTexture.wrapT = THREE.RepeatWrapping;
-centralTexture.repeat.set(1, 1); // on utilise toute l'image
+// --- Plan central avec texture qui défile sans répétition ---
+const centralTexture = textureLoader.load('Images/sable_noir.jpg', (tex) => {
+    // on garde l'aspect naturel sans répétition
+    tex.wrapS = THREE.ClampToEdgeWrapping;
+    tex.wrapT = THREE.ClampToEdgeWrapping;
+    tex.repeat.set(1, 1); // pas de répétition
+});
 
 const centralWidth = 0.7 * size.width;
-const centralGeometry = new THREE.PlaneGeometry(centralWidth, size.height); // hauteur inchangée
-const centralMaterial = new THREE.MeshBasicMaterial({map: centralTexture});
+const centralGeometry = new THREE.PlaneGeometry(centralWidth, size.height);
+const centralMaterial = new THREE.MeshBasicMaterial({ map: centralTexture });
 const centralPlane = new THREE.Mesh(centralGeometry, centralMaterial);
 scene.add(centralPlane);
 
-// --- Scroll animation de la texture ---
+// --- Animation de scroll ---
 let targetOffset = 0;
 let currentOffset = 0;
 const speed = 0.1;
 
 window.addEventListener('scroll', () => {
+    // scrollFactor = 0 → haut, 1 → bas
     const scrollFactor = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-    targetOffset = scrollFactor; // l'image entière peut défiler
+
+    // on limite l'offset entre 0 et 1-imageHeightRatio
+    // ici 1 correspond à la hauteur complète de l'image
+    targetOffset = THREE.MathUtils.clamp(scrollFactor, 0, 1);
 });
 
 function animate() {
@@ -60,7 +71,7 @@ animate();
 
 // --- Redimensionnement ---
 window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth/window.innerHeight;
+    camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
 
@@ -69,5 +80,5 @@ window.addEventListener('resize', () => {
     bgPlane.geometry = new THREE.PlaneGeometry(size.width, size.height);
 
     centralPlane.geometry.dispose();
-    centralPlane.geometry = new THREE.PlaneGeometry(0.7 * size.width, size.height); // hauteur inchangée
+    centralPlane.geometry = new THREE.PlaneGeometry(0.7 * size.width, size.height);
 });
