@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 300vh;
+  overflow-x: hidden;
+  font-family: 'Exo 2', sans-serif;
+}
+
+h1 {
+  font-size: 8vw;
+}
+
+.background-fumee {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+
+  background-color: #000;
+
+
+  background-image:
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 60%),
+    radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 60%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+  background-blend-mode: lighten;
+}
+
+.scroll-zone {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.scroll-content {
+  width: 100%;
+  height: 200%;
+  background: url('../Images/nuage.jpg') center top repeat-y;
+  background-size: contain;
+
+  border: 6px solid #ffffff;
+
+  box-shadow:
+    0 0 20px #ffffff,
+    0 0 40px #ffffff,
+    0 0 80px #ffffff,
+    0 0 160px #ffffff;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.scroll-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(15px);
+  pointer-events: none;
+}
+
+main section {
+  max-width: 70vw;
+  margin: 0 auto;
+  padding: 100px 0;
+  text-align: center;
+}
+
+main section p {
+  color: #fff;
+  font-size: 24px;
+}
+
+canvas {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+.cards-container {
+  max-width: 70vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Carte gauche */
+.card.left:nth-child(1) {
+  align-self: flex-start;
+  width: 55%;
+  padding: 30px;
+  margin-top: 100px;
+}
+
+/* Carte droite */
+.card.right:nth-child(2) {
+  align-self: flex-end;
+}
+
+/* Carte gauche suivante mais centrer*/
+.card.left:nth-child(n+3){
+  align-self: flex-start;
+  margin-left: 20%;
+  margin-top: 60px;
+}
+
+
+.card {
+  width: 45%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 15px;
+  color: #fff;
+  text-align: center;
+  margin: 20px;
+
+  border: 1px solid #ffffff;
+  box-shadow:
+    0 0 3px #ffffff,
+    0 0 6px #ffffff,
+    0 0 12px #ffffff;
+}
+
+.card img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+
+.card:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow:
+    0 0 5px #ffffff,
+    0 0 10px #ffffff,
+    0 0 20px #ffffff;
+  transform: scale(1.03);
+}
