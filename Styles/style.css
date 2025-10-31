@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
   height: 300vh;
   overflow-x: hidden;
@@ -102,24 +106,14 @@ canvas {
   gap: 40px;
 }
 
-/* Carte gauche */
-.card.left:nth-child(1) {
-  align-self: flex-start;
-  width: 55%;
-  padding: 30px;
-  margin-top: 100px;
-}
-
-/* Carte droite */
-.card.right:nth-child(2) {
+.card.right {
   align-self: flex-end;
+  margin-right: 5%;
 }
 
-/* Carte gauche suivante mais centrer*/
-.card.left:nth-child(n+3){
+.card.left {
   align-self: flex-start;
-  margin-left: 20%;
-  margin-top: 60px;
+  margin-left: 5%;
 }
 
 
@@ -155,4 +149,97 @@ canvas {
     0 0 10px #ffffff,
     0 0 20px #ffffff;
   transform: scale(1.03);
+}
+
+.hero-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 80px;
+  margin-top: 150px;
+  margin-left: 10%;
+}
+
+.hero-card .photo img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  filter: grayscale(100%);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.01);
+}
+
+.hero-card .info {
+  position: relative;
+}
+
+.hero-card h1 {
+  color: #fff;
+  font-size: 8vw;
+  font-weight: 200;
+  line-height: 0.9;
+  letter-spacing: 2px;
+}
+
+.hero-card .last-name {
+  font-weight: 400;
+  opacity: 0.3;
+}
+
+.hero-card .index {
+  position: absolute;
+  bottom: 0;
+  right: -40px;
+  font-size: 2vw;
+  color: rgba(255, 255, 255, 0.1);
+  font-weight: 200;
+}
+
+.index {
+  display: block;
+  font-size: 5vw;
+  color: rgba(255, 255, 255, 0.15);
+  font-weight: 200;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.texte{
+  text-align: left;
+}
+
+.titre{
+  font-size: 40px;
+}
+
+.titre::before{
+  content: "💻";
+}
+
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    border-radius: 50px;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 8px 14px;
+    border-radius: 25px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    background: white;
+    color: black;
 }
