@@ -315,3 +315,76 @@ footer {
   height: 20px;
   background-color: white;
 }
+
+
+.hero-card .photo-scenik img {
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.01);
+}
+
+.card-center {
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 15px;
+  color: #fff;
+  text-align: center;
+  margin: 20px;
+
+  border: 1px solid #ffffff;
+  box-shadow:
+    0 0 3px #ffffff,
+    0 0 6px #ffffff,
+    0 0 12px #ffffff;
+
+  transition: background-color 0.4s ease,
+    box-shadow 0.4s ease,
+    transform 0.4s ease;
+}
+
+.btn-scenik {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+  box-shadow:
+    0 0 5px #ffffff,
+    0 0 10px #ffffff,
+    0 0 20px #ffffff;
+}
+
+.btn-scenik a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.btn-scenik:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow:
+    0 0 10px #ffffff,
+    0 0 20px #ffffff,
+    0 0 40px #ffffff;
+}
+
+.btn-scenik:active {
+  transform: scale(0.97);
+  box-shadow:
+    0 0 5px #ffffff,
+    0 0 10px #ffffff;
+}
