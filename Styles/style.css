@@ -7,7 +7,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -131,6 +131,10 @@ canvas {
     0 0 3px #ffffff,
     0 0 6px #ffffff,
     0 0 12px #ffffff;
+
+  transition: background-color 0.4s ease,
+    box-shadow 0.4s ease,
+    transform 0.4s ease;
 }
 
 .card img {
@@ -203,43 +207,111 @@ canvas {
   text-align: right;
 }
 
-.texte{
+.texte {
   text-align: left;
 }
 
-.titre{
+.titre-00 {
   font-size: 40px;
 }
 
-.titre::before{
+.titre-00::before {
   content: "💻";
 }
 
+.titre-01 {
+  font-size: 40px;
+}
+
+.titre-01::before {
+  content: "👨‍🎓";
+}
+
+.titre-02 {
+  font-size: 40px;
+}
+
+.titre-02::before {
+  content: "💼";
+}
+
+.titre-03 {
+  font-size: 40px;
+}
+
+.titre-03::before {
+  content: "🧠";
+}
+
+.titre-04 {
+  font-size: 40px;
+}
+
+.titre-04::before {
+  content: "🌟";
+}
+
+.titre-05 {
+  font-size: 40px;
+}
+
+.titre-05::before {
+  content: "📞";
+}
+
 .navbar {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 1rem;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 10px 20px;
-    border-radius: 50px;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 50px;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
 }
 
 .navbar a {
-    text-decoration: none;
-    color: white;
-    border: 1px solid white;
-    padding: 8px 14px;
-    border-radius: 25px;
-    transition: 0.3s;
-    font-weight: 500;
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  padding: 8px 14px;
+  border-radius: 25px;
+  transition: 0.3s;
+  font-weight: 500;
 }
 
 .navbar a:hover {
-    background: white;
-    color: black;
+  background: white;
+  color: black;
+}
+
+footer {
+
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  width: 100%;
+  position: relative;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 20px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.footer-divider {
+  width: 1px;
+  height: 20px;
+  background-color: white;
 }
