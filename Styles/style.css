@@ -280,6 +280,54 @@ canvas {
 .titre-08::before {
   content: "⚙️";
 }
+.titre-09 {
+  font-size: 40px;
+}
+
+.titre-09::before {
+  content: "🔗";
+}
+
+.titre-10 {
+  font-size: 40px;
+}
+
+.titre-10::before {
+  content: "👨🏻‍💼";
+}
+
+.titre-11 {
+  font-size: 40px;
+}
+
+.titre-11::before {
+  content: "🛡️";
+}
+
+.titre-12 {
+  font-size: 40px;
+}
+
+.titre-12::before {
+  content: "⌨️";
+}
+
+.titre-13 {
+  font-size: 40px;
+}
+
+.titre-13::before {
+  content: "🛠️";
+}
+
+.titre-14 {
+  font-size: 40px;
+}
+
+.titre-14::before {
+  content: "📔";
+}
+
 
 
 .navbar {
@@ -351,7 +399,7 @@ footer {
   align-self: center;
   margin-left: auto;
   margin-right: auto;
-  width: 70%;
+  width: 60%;
   background-color: rgba(0, 0, 0, 0.7);
   padding: 20px;
   border-radius: 15px;
