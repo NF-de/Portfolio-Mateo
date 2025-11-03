@@ -389,11 +389,12 @@ footer {
 
 
 .hero-card .photo-scenik img {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.01);
 }
+
 
 .card-center {
   align-self: center;
@@ -460,6 +461,187 @@ footer {
     0 0 10px #ffffff;
 }
 
-.logos {
+.logos img {
+  width: 25%;
+  max-width: 120px;
+  height: auto;
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+
+.logos img:hover {
+  transform: scale(1.05);
+}
+
+.titre-section {
+  font-size: 2rem;
   text-align: center;
+  color: #fff;
+  margin: 20px 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+
+/* --- Responsive (tablettes et petits écrans) --- */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 10vw;
+  }
+
+  .hero-card {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .titre-section {
+    font-size: 1.8rem;
+  }
+
+  .hero-card .photo-scenik img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .hero-card .info {
+    text-align: center;
+  }
+
+  .cards-container {
+    max-width: 90vw;
+  }
+
+  .card-center {
+    width: 80%;
+  }
+
+  .scroll-zone {
+    width: 90vw;
+  }
+}
+
+/* --- Responsive mobile (smartphones) --- */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 12vw;
+  }
+
+  .titre-section {
+    font-size: 1.5rem;
+  }
+
+  .hero-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    margin-left: 0;
+    margin-top: 80px;
+  }
+
+  .hero-card .photo-scenik img {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .cards-container {
+    max-width: 95vw;
+    gap: 20px;
+  }
+
+  .card-center {
+    width: 95%;
+    padding: 15px;
+    margin: 10px auto;
+  }
+
+  .card-center p {
+    font-size: 18px;
+  }
+
+  .scroll-zone {
+    width: 95vw;
+  }
+
+  footer {
+    font-size: 16px;
+    padding: 20px 10px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-divider {
+    display: none;
+  }
+
+  .btn-scenik {
+    font-size: 16px;
+    padding: 10px 22px;
+  }
+}
+
+/* --- Ultra petits écrans (≤480px) --- */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 14vw;
+  }
+
+  .card-center {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .hero-card .photo-scenik img {
+    max-width: 200px;
+  }
+
+  .titre-section {
+    font-size: 1.2rem;
+  }
+
+  .btn-scenik {
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+
+  .footer-content span {
+    display: block;
+  }
+}
+
+/* --- Images des pages de projet --- */
+.image-projet {
+  width: 100%;
+  height: auto;
+  max-width: 700px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.image-projet:hover {
+  transform: scale(1.03);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .image-projet {
+    width: 100%;
+    max-width: 100%;
+    margin: 10px auto;
+  }
 }
