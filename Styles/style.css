@@ -258,6 +258,7 @@ canvas {
 .titre-05::before {
   content: "📞";
 }
+
 .titre-06 {
   font-size: 40px;
 }
@@ -273,6 +274,7 @@ canvas {
 .titre-07::before {
   content: "🎯";
 }
+
 .titre-08 {
   font-size: 40px;
 }
@@ -280,6 +282,7 @@ canvas {
 .titre-08::before {
   content: "⚙️";
 }
+
 .titre-09 {
   font-size: 40px;
 }
@@ -482,8 +485,6 @@ footer {
   text-transform: uppercase;
 }
 
-
-
 /* --- Responsive (tablettes et petits écrans) --- */
 @media (max-width: 1024px) {
   h1 {
@@ -568,6 +569,10 @@ footer {
     font-size: 18px;
   }
 
+  .card{
+    width: 90%;
+  }
+
   .scroll-zone {
     width: 95vw;
   }
@@ -602,6 +607,11 @@ footer {
     width: 100%;
     border-radius: 10px;
   }
+
+  .card {
+    width: 90%;
+  }
+
 
   .hero-card .photo-scenik img {
     max-width: 200px;
